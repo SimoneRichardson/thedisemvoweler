@@ -11,47 +11,51 @@ namespace thedisemvoweler
         static void Main(string[] args)
         {
            
-            //Create a function called Disemvoweler that takes a string parameter called "input"
-      
             
+            //call your  new disemvoweled function from your Main function
+            Console.WriteLine("Nickleback is my favorite band. Their songwriting can't be beat!");
+            Disemvoweler("Nickleback is my favorite band.Their songwriting can't be beat!");
+            Console.WriteLine("How many bears could bear grylls grill if bear grylls could grill bears?");
+            Disemvoweler("How many bears could bear grylls grill if bear grylls could grill bears?");
+            Console.WriteLine("Im a code ninja, baby. I make the functions and I make the calls.");
+            Disemvoweler("Im a code ninja, baby. I make the functions and I make the calls.");
+      
+    
+
             
             //keep the console open
             Console.ReadKey();
-
         }
-          
+    }
+}  
         
-        
-        
-        static void Disemvoweler(string input)
+    
+            static string Disemvoweler(string input)
             {
-            //display the original input
-            
-            
-            {
-
-            //grabbing one letter from the string by its index
-            char vowels = input[i];
-
             // hold our output
-            string vowels = "aeiou";
-
-
-            //declaring
+            string vowels = "";
+            string ReturnString ="";
             int numVowels = 0;
-            for (int i = 0; i < input.Length; i=i+1)
+            for (int i = 0; i < inString.Length; i=i+1)
 
            //is it a vowel
-            if (letter [i] == 'a' || letter[i] == 'e' || letter[i] == 'i' || letter[i] == 'o' || letter[i] == 'u'){
-              
-
-                //found a vowel remove the vowel
-
-                else if ( letter == ' ')
-
+            var c = inString[i];
+            if (c == 'a' ||c == 'e' ||c== 'i' || c == 'o' || c == 'u')
+            {
+             vowels += c;
+            { 
+                else if (c == ' ' )
+                {
+                    numVowels += 1;{
+                    }
+                    else
+                    {
+                       ReturnString += c;
+                }
             }
+              return returnString;
          }
-    }
+     
 
       
             
