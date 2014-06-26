@@ -10,52 +10,56 @@ namespace thedisemvoweler
     {
         static void Main(string[] args)
         {
-           
-            
             //call your  new disemvoweled function from your Main function
-            Console.WriteLine("Nickleback is my favorite band. Their songwriting can't be beat!");
-            Disemvoweler("Nickleback is my favorite band.Their songwriting can't be beat!");
-            Console.WriteLine("How many bears could bear grylls grill if bear grylls could grill bears?");
-            Disemvoweler("How many bears could bear grylls grill if bear grylls could grill bears?");
-            Console.WriteLine("Im a code ninja, baby. I make the functions and I make the calls.");
-            Disemvoweler("Im a code ninja, baby. I make the functions and I make the calls.");
-      
-    
 
-            
-            //keep the console open
+            disemvoweler("Nickleback is my favorite band.Their songwriting can't be beat!");
+            disemvoweler("How many bears could bear grylls grill if bear grylls could grill bears?");
+            disemvoweler("Im a code ninja, baby. I make the functions and I make the calls.");
+
+            //Stop the program
             Console.ReadKey();
         }
-    }
-}  
-        
-    
-            static string Disemvoweler(string input)
-            {
-            // hold our output
-            string vowels = "";
-            string ReturnString ="";
-            int numVowels = 0;
-            for (int i = 0; i < inString.Length; i=i+1)
+        static void disemvoweler(string input) 
+        {
+            //Print the original
+            Console.WriteLine("Original: " + input);
 
-           //is it a vowel
-            var c = inString[i];
-            if (c == 'a' ||c == 'e' ||c== 'i' || c == 'o' || c == 'u')
+            string text = input.Replace(" ", " ");
+            //Output will be final product
+            string output = null;
+            //vowel will count the vowels removed from text
+            string vowel = null;
+            //Change it into a list to check every letter
+            List<char> letter = text.ToList();
+            for (int i = 0; i < letter.Count(); i++)
             {
-             vowels += c;
-            { 
-                else if (c == ' ' )
+            
+                 //Turn every letter to string 
+                string letterString = letter[i].ToString();
+                if (letterString=="a"|| letterString=="e"||letterString=="i"||letterString=="o"||letterString=="u")
                 {
-                    numVowels += 1;{
-                    }
-                    else
-                    {
-                       ReturnString += c;
+                //vowel variable will concentrate with vowels
+                    vowel = vowel + letterString;
+                //eliminate the string
+                letterString = "";
                 }
+                else
+                {
+                //If the letter is not a vowel concatenate with the output
+                    output = output + letterString;
+
+               }
             }
-              return returnString;
-         }
-     
+            //Print out the product
+            Console.WriteLine("disemvoweler: " + output);
+            Console.WriteLine("Vowels are removed: " + vowel);
+            Console.WriteLine();
+
+        }
+    }
+}
+    
+
 
       
             
